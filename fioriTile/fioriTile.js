@@ -74,7 +74,7 @@
             });
 
             var oView  = sap.ui.xmlview({
-                viewContent: jQuery(_shadowRoot.getElementById("_oView")).html(),
+                viewContent: jQuery(_shadowRoot.getElementById("oView")).html(),
             });
             oView.placeAt(content);
         });
