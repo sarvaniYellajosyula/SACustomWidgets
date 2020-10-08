@@ -38,9 +38,9 @@
 			"default": "red"
 		},
 		"opacity": {
-			"type": "number",
+			"type": "string",
 			"description": "Opacity",
-			"default": 1
+			"default": "1"
 		},
 		"width": {
 			"type": "integer",
