@@ -35,14 +35,25 @@
     class GenericTile extends HTMLElement {
         constructor() {
             super();
-            _shadowRoot = this.attachShadow({ mode: "open" });
+            _shadowRoot = this.attachShadow({
+                mode: "open"
+            });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
+
             _id = createGuid();
+
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
+
             this._export_settings = {};
+            //    this._export_settings.date = "";
+
             this.addEventListener("click", event => {
+
                 console.log('click');
             });
+
+
+
         }
 
         //Fired when the widget is added to the html DOM of the page
@@ -129,6 +140,7 @@
                 this._subscription();
                 this._subscription = null;
             }
+
         }
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function first
@@ -136,12 +148,14 @@
             if ("designMode" in oChangedProperties) {
                 this._designMode = oChangedProperties["designMode"];
             }
+
         }
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
         onCustomWidgetAfterUpdate(oChangedProperties) {
             loadthis(this);
         }
+
 
         _firePropertiesChanged() {
             this.tileId = "";
@@ -186,6 +200,7 @@
                 "sap/ui/core/mvc/Controller"
             ], function(jQuery, Controller) {
                 "use strict";
+
                 return Controller.extend("sap.m.sample.GenericTileAsLaunchTile.Page", {
                     press: function(oEvent) {
                         console.log("The GenericTile is pressed.");
@@ -197,15 +212,25 @@
                                 settings: this.settings
                             }
                         }));
+                    },
+                    header: function(oEvent) {
+                        console.log("The Header Loading.");
+                        this.settings = {};
+                        that.dispatchEvent(new CustomEvent("onLoad", {
+                            detail: {
+                                settings: this.settings
+                            }
+                        }));
                     }
                 });
             });
 
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
-				viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+                viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
             });
             oView.placeAt(content);
+
 
             if (that_._designMode) {
                 oView.byId("GrossMargin").setEnabled(false);
