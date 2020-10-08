@@ -136,7 +136,7 @@
              if (this._firstConnection){
                 this.redraw();
             }
-
+		}
         // SETTINGS
 
  		redraw(){
