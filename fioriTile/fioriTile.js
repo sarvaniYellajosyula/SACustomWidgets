@@ -35,10 +35,7 @@
     class FioriTile extends HTMLElement {
         constructor() {
             super();
-
-            _shadowRoot = this.attachShadow({
-                mode: "open"
-            });
+            _shadowRoot = this.attachShadow({ mode: "open" });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
             this.addEventListener("click", event => {
@@ -71,7 +68,7 @@
             ], function(jQuery, Controller) {
                 "use strict";
 
-                return Controller.extend("myView.Template", {
+                return Controller.extend("sap.m.sample.GenericTileAsLaunchTile.Page", {
 
                 });
             });
