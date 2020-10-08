@@ -4,7 +4,7 @@
         <h1>Hello World</h1>
     `;
 
-    customElements.define('com-sac-customWidget-helloworld1', class HelloWorld1 extends HTMLElement {
+    customElements.define('com-sac-customwidget-helloworld1', class HelloWorld1 extends HTMLElement {
 
 
 		constructor() {
