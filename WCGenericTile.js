@@ -60,16 +60,15 @@
          onCustomWidgetAfterUpdate(oChangedProperties) {
 			if (this._firstConnection){
                 loadthis(this); 
-            }
-              
+            }              
          }        
      }
     customElements.define("com-sac-customwidget-generictile", GenericTile);
 
     // UTILS
     function loadthis(that) {
-        var that_ = that;
-
+       
+	   var that_ = that;
         let content = document.createElement('div');
         content.slot = "content";
         that_.appendChild(content);
@@ -81,9 +80,8 @@
             sap.ui.define([
                 "jquery.sap.global",
                 "sap/ui/core/mvc/Controller"
-            ], function (jQuery, Controller) {
+            ], function (jQuery, Controller) {				
                 "use strict";
-
                 return Controller.extend("sap.m.sample.GenericTileAsLaunchTile.Page", {
                 });
             });
