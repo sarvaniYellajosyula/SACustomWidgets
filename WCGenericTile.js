@@ -1,7 +1,5 @@
 (function()  {
-    let _shadowRoot;
-  //  let _id;
-  //  let _genericTile;   
+    let _shadowRoot; 
 
     let tmpl = document.createElement("template");
      tmpl.innerHTML = `
@@ -37,8 +35,6 @@
              super(); 
              _shadowRoot = this.attachShadow({ mode: "open" });
              _shadowRoot.appendChild(tmpl.content.cloneNode(true));
-         //    _id = createGuid();
-          //   _shadowRoot.querySelector("#oView").id = _id + "_oView";
              this.addEventListener("click", event => {
                  console.log('On Click of Tile Event');
 				 var event = new Event("onClick");
@@ -66,31 +62,7 @@
                 loadthis(this); 
             }
               
-         }
-
-         _firePropertiesChanged() {
-             this.tileId = "";
-             this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                 detail: {
-                     properties: {
-                         tileId: this.tileId
-                     }
-                 }
-             }));
-         }
-         // SETTINGS
-      
-         static get observedAttributes() {
-             return [
-                 "tileId"
-             ];
-         }
-         attributeChangedCallback(name, oldValue, newValue) {
-             if (oldValue != newValue) {
-                 this[name] = newValue;
-             }
-         }
-         
+         }        
      }
     customElements.define("com-sac-customwidget-generictile", GenericTile);
 
@@ -128,11 +100,4 @@
         });
     }
 
-    function createGuid() {
-        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
-            let r = Math.random() * 16 | 0,
-                v = c === "x" ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }  
 })();
