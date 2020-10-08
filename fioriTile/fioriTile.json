@@ -1,0 +1,32 @@
+{
+    "id": "com.sap.sample.fioritile",
+    "version": "1.0.0",
+    "name": "Fiori Tile",
+    "description": "My first Fiori Tile",
+    "newInstancePrefix": "FioriTile",
+    "icon": "https://opel22.github.io/CustomWidgets/fioriTile/fioriTile.png",
+    "vendor": "SAP",
+    "eula": "",
+    "license": "",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "com-sap-sample-fioritile",
+            "url": "https://opel22.github.io/CustomWidgets/fioriTile/fioriTile.js",
+            "integrity": "sha256-/HF47ayRHxc4HpYWVmrNoetT6xaC2u5fwbXgUxrDkI8=",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        
+    },
+    "methods": {
+        
+    },
+    "events": {
+        "onClick": {
+            "description": "Called when the user clicks the Fiori Tile."
+        }
+    },
+    "imports": ["datasource"]
+}            
