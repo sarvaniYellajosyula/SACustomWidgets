@@ -37,8 +37,8 @@
             super();
             _shadowRoot = this.attachShadow({ mode: "open" });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
-     
-			_shadowRoot.querySelector("#oView").id = _id + "_oView";
+            _id = createGuid();
+            _shadowRoot.querySelector("#oView").id = _id + "_oView";
             this._export_settings = {};
             this.addEventListener("click", event => {
                 console.log('click');
@@ -125,17 +125,10 @@
 
         //Fired when the widget is removed from the html DOM of the page (e.g. by hide)
         disconnectedCallback() {
-            if (this._subscription) {
-                this._subscription();
-                this._subscription = null;
-            }
         }
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function first
         onCustomWidgetBeforeUpdate(oChangedProperties) {
-            if ("designMode" in oChangedProperties) {
-                this._designMode = oChangedProperties["designMode"];
-            }
         }
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
@@ -210,6 +203,14 @@
             if (that_._designMode) {
                 oView.byId("GrossMargin").setEnabled(false);
             }
+        });
+    }
+
+    function createGuid() {
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+            let r = Math.random() * 16 | 0,
+                v = c === "x" ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
         });
     }
 })();
