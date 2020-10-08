@@ -40,7 +40,7 @@
              _id = createGuid();
              _shadowRoot.querySelector("#oView").id = _id + "_oView";
              this.addEventListener("click", event => {
-                 console.log('click');
+                 console.log('On Click of Tile Event');
 				 var event = new Event("onClick");
                  this.dispatchEvent(event);
              });
@@ -113,16 +113,6 @@
                 "use strict";
 
                 return Controller.extend("sap.m.sample.GenericTileAsLaunchTile.Page", {
-                    press: function (oEvent) {
-                        console.log("The GenericTile is pressed.");
-						this.settings = {};
-                      //  this.settings.password = "";
-                        that.dispatchEvent(new CustomEvent("onClick", {
-                            detail: {
-                                settings: this.settings
-                            }
-                        }));
-                    }
                 });
             });
 
