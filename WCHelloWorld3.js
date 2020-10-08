@@ -3,7 +3,7 @@
     tmpl.innerHTML = `
     `;
 
-    customElements.define('com-sac-customwidget-helloworld2', class HelloWorld1 extends HTMLElement {
+    customElements.define('com-sac-customwidget-helloworld3', class HelloWorld3 extends HTMLElement {
 
 
         constructor() {
