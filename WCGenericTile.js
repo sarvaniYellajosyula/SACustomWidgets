@@ -32,7 +32,7 @@
    </script>   
      `;
 
-    class GenericTile extends HTMLElement {
+    customElements.define("com-sac-customwidget-generictile", class GenericTile extends HTMLElement {
         constructor() {
             super();
             _shadowRoot = this.attachShadow({ mode: "open" });
@@ -133,42 +133,27 @@
 
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
         onCustomWidgetAfterUpdate(oChangedProperties) {
-            loadthis(this);
-        }
+             if (this._firstConnection){
+                this.redraw();
+            }
 
-        _firePropertiesChanged() {
-            this.tileId = "";
-            this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                detail: {
-                    properties: {
-                        tileId: this.tileId
-                    }
-                }
-            }));
-        }
         // SETTINGS
 
-        static get observedAttributes() {
-            return [
-                "tileId"
-            ];
-        }
-        attributeChangedCallback(name, oldValue, newValue) {
-            if (oldValue != newValue) {
-                this[name] = newValue;
+ 		redraw(){
+        /*    if (this._tagContainer){
+                this._tagContainer.parentNode.removeChild(this._tagContainer);
             }
-        }
 
-    }
-    customElements.define("com-sac-customwidget-generictile", GenericTile);
-
-    // UTILS
-    function loadthis(that) {
-        var that_ = that;
-
+            var shadow = window.getSelection(this._shadowRoot);
+            this._tagContainer = document.createElement(this._tagType);
+            var theText = document.createTextNode(this._tagText);    
+            this._tagContainer.appendChild(theText); 
+            this._shadowRoot.appendChild(this._tagContainer);
+			*/
+		
         let content = document.createElement('div');
         content.slot = "content";
-        that_.appendChild(content);
+        this.appendChild(content);
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
@@ -185,7 +170,7 @@
                         this.settings = {};
                         //  this.settings.password = "";
 
-                        that.dispatchEvent(new CustomEvent("onClick", {
+                        this.dispatchEvent(new CustomEvent("onClick", {
                             detail: {
                                 settings: this.settings
                             }
@@ -199,13 +184,14 @@
 				viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
             });
             oView.placeAt(content);
-
-            if (that_._designMode) {
-                oView.byId("GrossMargin").setEnabled(false);
+            if (this._designMode) {
+                oView.byId("GrossMargin").setEnabled(true);
             }
         });
-    }
-
+		
+        }
+    });
+    
     function createGuid() {
         return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
             let r = Math.random() * 16 | 0,
