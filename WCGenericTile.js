@@ -1,7 +1,7 @@
 (function()  {
     let _shadowRoot;
-    let _id;
-    let _genericTile;   
+  //  let _id;
+  //  let _genericTile;   
 
     let tmpl = document.createElement("template");
      tmpl.innerHTML = `
@@ -37,8 +37,8 @@
              super(); 
              _shadowRoot = this.attachShadow({ mode: "open" });
              _shadowRoot.appendChild(tmpl.content.cloneNode(true));
-             _id = createGuid();
-             _shadowRoot.querySelector("#oView").id = _id + "_oView";
+         //    _id = createGuid();
+          //   _shadowRoot.querySelector("#oView").id = _id + "_oView";
              this.addEventListener("click", event => {
                  console.log('On Click of Tile Event');
 				 var event = new Event("onClick");
@@ -118,7 +118,7 @@
 
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
-                viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+                viewContent: jQuery(_shadowRoot.getElementById("oView")).html(),
             });
             oView.placeAt(content);
            
