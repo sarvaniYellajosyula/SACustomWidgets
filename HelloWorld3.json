@@ -19,7 +19,7 @@
 		{
 			"kind": "styling",
 			"tag": "com-sac-customwidget-helloworld3-aps",
-            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/aps_HelloWorld3.js",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/APSHelloWorld3.js",
 			"integrity": "",
             "ignoreIntegrity" : true
 		}
@@ -28,7 +28,7 @@
 		"widgetText": {
 			"type": "string",
 			"description": "The text to be displayed in the widget",
-			"default" : "Hello World"
+			"default" : "Hello"
 		}
 	},
 	"methods": {
