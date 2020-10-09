@@ -1,17 +1,38 @@
 (function() {
     let template = document.createElement("template");
     template.innerHTML = ` 
+    <form id="form">
+    <fieldset>
+        <legend>Colored Box Properties</legend>
+        <table>
+            <tr>
+                <td>Opacity</td>
+                <td><input id="builder_opacity" type="text" size="5" maxlength="5"></td>
+            </tr>
+        </table>
+        <input type="submit" style="display:none;">
+    </fieldset>
+</form>
+
         <form id="submitForm">
-                <legend class="no">Process Partner Generic Tile properties</legend>
-                    <div class="abra-prop">
-                        <div class="abra-title">Header text</div>
-                        <div><input id="builder_header" class="abra-input" type="text" size="8"></div>				
-                    </div>
-                    <div class="abra-prop">
-                        <div class="abra-title">Subheader text</div>
-                        <div><input id="builder_subheader" class="abra-input" type="text" size="8"></div>				
-                    </div>    
-                    <input type="submit" style="display:none;">                
+        <fieldset>
+            <legend>Process Partner Generic Tile properties</legend>
+            <table>
+                <tr>
+                    <td>Header Text</td>
+                    <td><input id="builder_header" class="abra-input" type="text" size="8"></td>
+                </tr>
+                <tr>
+                    <td>Subheader Text</td>
+                    <td><input id="builder_subheader" class="abra-input" type="text" size="8"></td>
+                </tr>
+                <tr>
+                    <td>Unit Value</td>
+                    <td><input id="builder_unit" class="abra-input" type="text" size="8"></td>
+                </tr>
+            </table>
+            <input type="submit" style="display:none;">
+        </fieldset>           
         </form>
 		`;
     class NewTileBuilderPanel extends HTMLElement {
@@ -28,7 +49,8 @@
                 detail: {
                     properties: {
                         header: this.header,
-                        subheader: this.subheader
+                        subheader: this.subheader,
+                        unit: this.unit                        
                     }
                 }
             }));
@@ -44,6 +66,12 @@
         }
         get subheader() {
             return this._shadowRoot.getElementById("builder_subheader").value;
+        }
+        set unit(newUnit) {
+            this._shadowRoot.getElementById("builder_unit").value = newUnit;
+        }
+        get unit() {
+            return this._shadowRoot.getElementById("builder_unit").value;
         }
     }
         customElements.define("com-sap-sample-newtile-builder", NewTileBuilderPanel);
