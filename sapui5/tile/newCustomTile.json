@@ -4,7 +4,7 @@
     "name": "newTile",
     "description": "A newTile",
     "newInstancePrefix": "newTile",
-    "icon": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/newTile/icon.png",
+    "icon": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/tile/icon.png",
     "vendor": "SAP",
     "eula": "",
     "license": "",
@@ -12,15 +12,15 @@
         {
             "kind": "main",
             "tag": "com-sap-sample-newtile",
-            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/newTile/newTile.js",
-            "integrity": "sha256-/HF47ayRHxc4HpYWVmrNoetT6xaC2u5fwbXgUxrDkI8=",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/tile/newCustomTile.js",
+            "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "builder",
             "tag": "com-sap-sample-newtile-builder",
-            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/newTile/newTile_builder.js",
-            "integrity": "sha256-vkAAfA5e87NR7P0VbFO0VMercCYYgE/LyTi8bN+8vJs=",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/tile/newCustomTile_builder.js",
+            "integrity": "",
             "ignoreIntegrity": true
         }
     ],
