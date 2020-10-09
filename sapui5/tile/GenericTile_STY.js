@@ -3,18 +3,18 @@
     template.innerHTML = `
 		<form id="form">
 			<fieldset>
-				<legend>Custom Widget Text</legend>
+				<legend>Tile Header Text</legend>
 				<table>
 					<tr>
-						<td>Text</td>
-						<td><input id="aps_text" type="string"></td>
+						<td>Header</td>
+						<td><input id="header_text" type="string"></td>
 					</tr>
 				</table>
 			</fieldset>
 		</form>
 	`;
 
-    class HelloWorldAps extends HTMLElement {
+    class GenericTileAps extends HTMLElement {
         constructor() {
             super();
             this._shadowRoot = this.attachShadow({mode: "open"});
@@ -27,20 +27,20 @@
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
                 detail: {
                     properties: {
-                        widgetText: this.widgetText
+                        headerText: this.headerText
                     }
                 }
             }));
         }
 
-        set widgetText(newText) {
-            this._shadowRoot.getElementById("aps_text").value = newText;
+        set headerText(newText) {
+            this._shadowRoot.getElementById("header_text").value = newText;
         }
 
-        get widgetText() {
-            return this._shadowRoot.getElementById("aps_text").value;
+        get headerText() {
+            return this._shadowRoot.getElementById("header_text").value;
         }
     }
 
-    customElements.define("com-sac-customwidget-helloworld3-aps", HelloWorldAps);
+    customElements.define("com-sac-customwidget-generictile-aps", GenericTileAps);
 })();

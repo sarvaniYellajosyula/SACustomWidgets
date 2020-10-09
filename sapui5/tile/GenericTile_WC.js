@@ -61,6 +61,16 @@
                 loadthis(this);
             }
         }
+
+        //Getters and Setters
+        get headerText() {
+            return this._tagType;
+        }
+
+        set headerText(value) {
+            this._tagText = value;
+        }
+        // End - Getters and Setters
     }
     customElements.define("com-sac-customwidget-generictile", GenericTile);
 
@@ -82,6 +92,7 @@
             ], function (jQuery, Controller) {
                 "use strict";
                 return Controller.extend("sap.m.sample.GenericTileAsLaunchTile.Page", {
+
                 });
             });
 
@@ -92,7 +103,8 @@
             oView.placeAt(content);
 
             if (that_._designMode) {
-                oView.byId("GrossMargin").setEnabled(true);
+                oView.byId("GrossMargin").setEnabled(true);                
+                oView.byId("GrossMargin").setHeader("Custom Header Text")
             }
         });
     }
