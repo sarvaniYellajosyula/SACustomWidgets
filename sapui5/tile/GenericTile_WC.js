@@ -17,7 +17,7 @@
 		<GenericTile 
 			id ="GrossMargin"
 			class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-			header="Gross Margin"
+			header=""
 			subheader="in Thousands USD" 
 			press="press"
 			>
@@ -104,7 +104,7 @@
 
             if (that_._designMode) {
                 oView.byId("GrossMargin").setEnabled(true);                
-                oView.byId("GrossMargin").setHeader("Custom Header Text")
+                oView.byId("GrossMargin").headerText("Custom Header Text")
             }
         });
     }

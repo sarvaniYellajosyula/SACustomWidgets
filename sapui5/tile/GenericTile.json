@@ -25,7 +25,7 @@
     }
   ],
   "properties": {
-		"tileHeaderText": {
+		"headerText": {
 			"type": "string",
 			"description": "The text to be displayed in the widget",
 			"default" : "Hello"
