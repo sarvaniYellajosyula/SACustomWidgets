@@ -31,13 +31,13 @@
             _shadowRoot = this.attachShadow({mode: "open"});
 
             _shadowRoot.appendChild(template.content.cloneNode(true));
+            
+            this._props = {};
+            loadthis(this);
             this.addEventListener("click", event => {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
 			});
-            this._props = {};
-            loadthis(this);
-            
             
         }
         onCustomWidgetBeforeUpdate(changedProperties) {
