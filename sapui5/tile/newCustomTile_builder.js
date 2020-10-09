@@ -10,7 +10,8 @@
                     <div class="abra-prop">
                         <div class="abra-title">Subheader text</div>
                         <div><input id="builder_subheader" class="abra-input" type="text" size="8"></div>				
-                    </div>                    
+                    </div>    
+                    <input type="submit" style="display:none;">                
         </form>
 		`;
     class NewTileBuilderPanel extends HTMLElement {
