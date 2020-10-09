@@ -105,6 +105,9 @@
         }        
     },
     "events": {
+        "onClick": {
+            "description": "onCLick of the Tile"
+          }
     },
     "imports": ["datasource"]
 }            

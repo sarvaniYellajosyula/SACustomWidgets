@@ -27,7 +27,8 @@
             e.preventDefault(), this.dispatchEvent(new CustomEvent("propertiesChanged", {
                 detail: {
                     properties: {
-                        header: this.header
+                        header: this.header,
+                        subheader: this.subheader
                     }
                 }
             }));
