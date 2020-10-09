@@ -230,7 +230,7 @@
 
 
             if (that_._designMode) {
-                oView.byId("dateInput").setEnabled(false);
+                oView.byId("dateInput").setEnabled(true);
             }
         });
     }
