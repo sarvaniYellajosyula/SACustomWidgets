@@ -12,7 +12,12 @@
             controllerName="myView.Template"
             xmlns="sap.m"
             xmlns:mvc="sap.ui.core.mvc">
-            <GenericTile id="genTile" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" size="L" header="Country-Specific Profit Margin" subheader="Expenses" press="press">
+            <GenericTile    id="genTile" 
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                            size="L" 
+                            header="Country-Specific Profit Margin" 
+                            subheader="Expenses" 
+                            press="press">
                 <TileContent id="tileCont" unit="EUR" footer="Current Quarter">
                     <NumericContent id="tile" value="2.22" scale="M" valueColor="Error" indicator="Up" withMargin="false" />
                 </TileContent>
