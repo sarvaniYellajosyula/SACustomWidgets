@@ -1,0 +1,59 @@
+{
+  "id": "com.sap.sac.datePicker",
+  "version": "0.0.1",
+  "name": "datePicker",
+  "description": "Date Picker",
+  "newInstancePrefix": "datePicker",
+  "icon": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/datepicker/datepickerimg.ico",
+  "vendor": "Dania Almadani",
+  "eula": "",
+  "license": "",
+  "imports": [ "input-controls" ],
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-sap-sac-datepicker",
+      "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/datepicker/datepicker.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "metadata": {
+      "type": "string",
+      "description": "For internal use",
+      "default": ""
+    },
+    "date": {
+      "type": "string",
+      "description": "Date",
+      "default": ""
+    }
+  },
+  "methods": {
+    "getDate": {
+      "returnType": "string",
+      "description": "Get date",
+      "parameters": [],
+      "body": "return this.date;"
+    },
+    "setDate": {
+      "description": "Set date",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "The new date"
+        }
+      ],
+      "body": "this.date = value;"
+    }
+
+  },
+  "events": {
+    "onStart": {
+      "description": "onStart events trigger"
+    }
+ 
+  }
+}
