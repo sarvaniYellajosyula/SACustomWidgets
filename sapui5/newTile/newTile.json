@@ -1,0 +1,110 @@
+{
+    "id": "com.sap.sample.newtile",
+    "version": "1.0.0",
+    "name": "newTile",
+    "description": "A newTile",
+    "newInstancePrefix": "newTile",
+    "icon": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/newTile/icon.png",
+    "vendor": "SAP",
+    "eula": "",
+    "license": "",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "com-sap-sample-newtile",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/newTile/newTile.js",
+            "integrity": "sha256-/HF47ayRHxc4HpYWVmrNoetT6xaC2u5fwbXgUxrDkI8=",
+            "ignoreIntegrity": true
+        },
+        {
+            "kind": "builder",
+            "tag": "com-sap-sample-newtile-builder",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/newTile/newTile_builder.js",
+            "integrity": "sha256-vkAAfA5e87NR7P0VbFO0VMercCYYgE/LyTi8bN+8vJs=",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        "width": {
+            "type": "integer",
+            "default": 192
+        },
+        "height": {
+            "type": "integer",
+            "default": 192
+        },
+        "value": {
+            "type": "string",
+            "description": "Tile Value",
+            "default": "0.00"
+        },
+        "unit": {
+            "type": "string",
+            "description": "Tile Unit",
+            "default": "CHF"
+        },
+        "header": {
+            "type": "string",
+            "description": "Tile Header",
+            "default": "Tile Header"
+        },
+        "subheader": {
+            "type": "string",
+            "description": "Tile Subheader",
+            "default": "Tile Subheader"
+        },
+        "name": {
+            "type": "string",
+            "description": "Tile name"
+        }
+    },
+    "methods": {
+        "setValue": {
+            "description": "Sets the value.",
+            "parameters": [
+                {
+                    "name": "newValue",
+                    "type": "string",
+                    "description": "The new Value"
+                }
+            ],
+            "body": "this.value = newValue;"
+        },
+        "setUnit": {
+            "description": "Sets the unit.",
+            "parameters": [
+                {
+                    "name": "newUnit",
+                    "type": "string",
+                    "description": "The new unit"
+                }
+            ],
+            "body": "this.unit = newUnit;"
+        },
+        "setHeader": {
+            "description": "Sets the header.",
+            "parameters": [
+                {
+                    "name": "newHeader",
+                    "type": "string",
+                    "description": "The new header"
+                }
+            ],
+            "body": "this.header = newHeader;"
+        },
+        "setSubheader": {
+            "description": "Sets the subheader.",
+            "parameters": [
+                {
+                    "name": "newSubheader",
+                    "type": "string",
+                    "description": "The new subheader"
+                }
+            ],
+            "body": "this.subheader = newSubheader;"
+        }        
+    },
+    "events": {
+    },
+    "imports": ["datasource"]
+}            

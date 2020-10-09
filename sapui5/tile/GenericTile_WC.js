@@ -69,6 +69,7 @@
 
         set headerText(value) {
             this._tagText = value;
+            oView.byId("GrossMargin").headerText("Custom Header Text");
         }
         // End - Getters and Setters
     }
@@ -104,7 +105,7 @@
 
             if (that_._designMode) {
                 oView.byId("GrossMargin").setEnabled(true);                
-                oView.byId("GrossMargin").headerText("Custom Header Text")
+                oView.byId("GrossMargin").headerText("Custom Header Text");
             }
         });
     }
