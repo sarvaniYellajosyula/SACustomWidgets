@@ -13,7 +13,7 @@
             this._firstConnection = false;
 			this._tagContainer;
             this._tagType = "h1";
-            this._tagText = "Hello World";
+            this._tagText = "Hello World 2";
         }
 
         //Fired when the widget is added to the html DOM of the page

@@ -1,7 +1,7 @@
 (function() {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-        <h1>Hello World</h1>
+        <h1>Hello World 1</h1>
     `;
 
     customElements.define('com-sac-customwidget-helloworld1', class HelloWorld1 extends HTMLElement {

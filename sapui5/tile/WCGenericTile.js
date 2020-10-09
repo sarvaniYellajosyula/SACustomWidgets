@@ -1,8 +1,8 @@
-(function()  {
-    let _shadowRoot; 
+(function () {
+    let _shadowRoot;
 
     let tmpl = document.createElement("template");
-     tmpl.innerHTML = `
+    tmpl.innerHTML = `
      <style>
      </style>
      <div id="ui5_content" name="ui5_content">
@@ -13,8 +13,7 @@
     <mvc:View
 	    controllerName="sap.m.sample.GenericTileAsLaunchTile.Page"
 	    xmlns:mvc="sap.ui.core.mvc"
-	    xmlns="sap.m"
-	   >
+	    xmlns="sap.m" >
 		<GenericTile 
 			id ="GrossMargin"
 			class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
@@ -29,46 +28,46 @@
 
    </script>   
      `;
- 
-     class GenericTile extends HTMLElement {
-         constructor() {
-             super(); 
-             _shadowRoot = this.attachShadow({ mode: "open" });
-             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
-             this.addEventListener("click", event => {
-                 console.log('On Click of Tile Event');
-				 var event = new Event("onClick");
-                 this.dispatchEvent(event);
-             });
-         }
- 
-         //Fired when the widget is added to the html DOM of the page
-         connectedCallback() {
-			this._firstConnection = true;
-            loadthis(this);   
-         }
- 
-          //Fired when the widget is removed from the html DOM of the page (e.g. by hide)
-         disconnectedCallback() {         
-         }
- 
-          //When the custom widget is updated, the Custom Widget SDK framework executes this function first
-         onCustomWidgetBeforeUpdate(oChangedProperties) { 
-         }
- 
-         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-         onCustomWidgetAfterUpdate(oChangedProperties) {
-			if (this._firstConnection){
-                loadthis(this); 
-            }              
-         }        
-     }
+
+    class GenericTile extends HTMLElement {
+        constructor() {
+            super();
+            _shadowRoot = this.attachShadow({ mode: "open" });
+            _shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            this.addEventListener("click", event => {
+                console.log('On Click of Tile Event');
+                var event = new Event("onClick");
+                this.dispatchEvent(event);
+            });
+        }
+
+        //Fired when the widget is added to the html DOM of the page
+        connectedCallback() {
+            this._firstConnection = true;
+            loadthis(this);
+        }
+
+        //Fired when the widget is removed from the html DOM of the page (e.g. by hide)
+        disconnectedCallback() {
+        }
+
+        //When the custom widget is updated, the Custom Widget SDK framework executes this function first
+        onCustomWidgetBeforeUpdate(oChangedProperties) {
+        }
+
+        //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+        onCustomWidgetAfterUpdate(oChangedProperties) {
+            if (this._firstConnection) {
+                loadthis(this);
+            }
+        }
+    }
     customElements.define("com-sac-customwidget-generictile", GenericTile);
 
     // UTILS
     function loadthis(that) {
-       
-	   var that_ = that;
+
+        var that_ = that;
         let content = document.createElement('div');
         content.slot = "content";
         that_.appendChild(content);
@@ -80,7 +79,7 @@
             sap.ui.define([
                 "jquery.sap.global",
                 "sap/ui/core/mvc/Controller"
-            ], function (jQuery, Controller) {				
+            ], function (jQuery, Controller) {
                 "use strict";
                 return Controller.extend("sap.m.sample.GenericTileAsLaunchTile.Page", {
                 });
@@ -91,9 +90,9 @@
                 viewContent: jQuery(_shadowRoot.getElementById("oView")).html(),
             });
             oView.placeAt(content);
-           
+
             if (that_._designMode) {
-                oView.byId("GrossMargin").setEnabled(false);
+                oView.byId("GrossMargin").setEnabled(true);
             }
         });
     }
