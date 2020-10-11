@@ -14,14 +14,14 @@
             "tag": "ch-processpartner-sample-bulletmicrochart",
             "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/bulletMicroChart/bulletMicroChart.js",
             "integrity": "",
-            "ignoreIntegrity": false
+            "ignoreIntegrity": true
         },
         {
             "kind": "builder",
             "tag": "com-sap-sample-newtile-builder",
             "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/bulletMicroChart/bulletMicroChart_builder.js",
             "integrity": "",
-            "ignoreIntegrity": false
+            "ignoreIntegrity": true
         }
     ],
     "properties": {
@@ -147,4 +147,4 @@
     "events": {
     },
     "imports": ["datasource"]
-}            
+}

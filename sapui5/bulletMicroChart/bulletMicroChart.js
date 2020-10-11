@@ -16,7 +16,7 @@
             <m:GenericTile id="genTile" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" size="L" header="Revenue Dynamics"
                 frameType="OneByOne" press="press">
                 <m:tileContent>
-                    <m:TileContent id="tileCont" unit="CHF" footer="With Forecast">
+                    <m:TileContent id="tileCont" unit="CHF" footer="">
                         <m:content>
                             <BulletMicroChart id="cont" scale="M" targetValue="100"
                                 forecastValue="110" showValueMarker="true" size="Responsive">
@@ -64,7 +64,8 @@
             if(!oView){
                 return; 
             }
-            oView.byId("cont").setActual(new sap.suite.ui.microchart.BulletMicroChartData({ color: sap.m.ValueColor.Good, value: newActual }));
+            oView.byId("cont").setActual(new sap.suite.ui.microchart.BulletMicroChartData({ 
+                color: sap.m.ValueColor.Good, value: newActual }));
         }
 
         set targetValue(newTargetValue) {
