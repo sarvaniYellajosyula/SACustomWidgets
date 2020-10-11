@@ -1,0 +1,150 @@
+{
+    "id": "ch.processpartner.sample.bulletmicrochart",
+    "version": "1.0.0",
+    "name": "newBulletMicroChart",
+    "description": "A bullet micro chart",
+    "newInstancePrefix": "bmc",
+    "icon": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/bulletMicroChart/icon.png",
+    "vendor": "Process Partner AG",
+    "eula": "",
+    "license": "",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "ch-processpartner-sample-bulletmicrochart",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/bulletMicroChart/bulletMicroChart.js",
+            "integrity": "",
+            "ignoreIntegrity": false
+        },
+        {
+            "kind": "builder",
+            "tag": "com-sap-sample-newtile-builder",
+            "url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/bulletMicroChart/bulletMicroChart_builder.js",
+            "integrity": "",
+            "ignoreIntegrity": false
+        }
+    ],
+    "properties": {
+        "width": {
+            "type": "integer",
+            "default": 200
+        },
+        "height": {
+            "type": "integer",
+            "default": 200
+        },
+        "actual": {
+            "type": "number",
+            "description": "Actual Value",
+            "default": 190
+        },
+        "targetValue": {
+            "type": "number",
+            "description": "Target Value",
+            "default": 100
+        },
+        "forecastValue": {
+            "type": "number",
+            "description": "Forecast Value",
+            "default": 110
+        },        
+
+        "unit": {
+            "type": "string",
+            "description": "Unit",
+            "default": "CHF"
+        },
+        "header": {
+            "type": "string",
+            "description": "Header",
+            "default": "Header"
+        },
+        "subheader": {
+            "type": "string",
+            "description": "Subheader",
+            "default": "Subheader"
+        }
+    },
+    "methods": {
+        "setActual": {
+            "description": "Sets the actual value.",
+            "parameters": [
+                {
+                    "name": "newActual",
+                    "type": "number",
+                    "description": "The new actual value"
+                }
+            ],
+            "body": "this.actual = newActual;"
+        },
+        "setTargetValue": {
+            "description": "Sets the target value.",
+            "parameters": [
+                {
+                    "name": "newTargetValue",
+                    "type": "number",
+                    "description": "The new target value"
+                }
+            ],
+            "body": "this.targetValue = newTargetValue;"
+        },
+        "setForecastValue": {
+            "description": "Sets the forecast value.",
+            "parameters": [
+                {
+                    "name": "newForecastValue",
+                    "type": "number",
+                    "description": "The new forecast value"
+                }
+            ],
+            "body": "this.forecastValue = newForecastValue;"
+        },
+        "setThresholdValue": {
+            "description": "Sets the threshold value.",
+            "parameters": [
+                {
+                    "name": "newThresholdValue",
+                    "type": "number",
+                    "description": "The new threshold value"
+                }
+            ]
+        },
+
+        "setUnit": {
+            "description": "Sets the unit.",
+            "parameters": [
+                {
+                    "name": "newUnit",
+                    "type": "string",
+                    "description": "The new unit"
+                }
+            ],
+            "body": "this.unit = newUnit;"
+        },
+        "setHeader": {
+            "description": "Sets the header.",
+            "parameters": [
+                {
+                    "name": "newHeader",
+                    "type": "string",
+                    "description": "The new header"
+                }
+            ],
+            "body": "this.header = newHeader;"
+        },
+        "setSubheader": {
+            "description": "Sets the subheader.",
+            "parameters": [
+                {
+                    "name": "newSubheader",
+                    "type": "string",
+                    "description": "The new subheader"
+                }
+            ],
+            "body": "this.subheader = newSubheader;"
+        }        
+    },
+    "events": {
+    },
+    "imports": ["datasource"]
+}            
