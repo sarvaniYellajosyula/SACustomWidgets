@@ -13,22 +13,22 @@
 			"kind": "main",
 			"tag": "com-gmail-cse-ari007-d3forcebubble",
 			"url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/d3BubbleChart/d3BubbleChart.js",
-			"integrity": "sha256-Zi2X53WQa/2Kxo8+iHg+q2yPD7KLc8vkeTYRuXDLilI=",
-			"ignoreIntegrity": false
+			"integrity": "",
+			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
 			"tag": "com-gmail-cse-ari007-d3forcebubble-sps",
 			"url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/d3BubbleChart/d3BubbleChart_styling.js",
-			"integrity": "sha256-y42oNFXtHoZ9fgIJrhAusLUVvz2545DbJc/RO+J76m8=",
-			"ignoreIntegrity": false
+			"integrity": "",
+			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
 			"tag": "com-gmail-cse-ari007-d3forcebubble-bps",
 			"url": "https://sarvaniyellajosyula.github.io/SACustomWidgets/sapui5/d3BubbleChart/d3BubbleChart_builder.js",
-			"integrity": "sha256-84K//09aUNpPZTwhu/bRiEHeFqLmU2lPdXvKnxshan0=",
-			"ignoreIntegrity": false
+			"integrity": "",
+			"ignoreIntegrity": true
 		}
 	],
 	"properties": {
